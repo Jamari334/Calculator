@@ -7,17 +7,34 @@ header.innerText = "My Calculator";
 document.body.appendChild(header)
 
 
+//-- input area
+const inputBar = document.createElement('input');
+inputBar.placeholder = "0";
+document.body.appendChild(inputBar);
+
+
+
 //------------------CREATING BUTTONS --------------------------//
+
 
 //--number 1
 const bNum1 = document.createElement("button")
 bNum1.innerText = "1";
 document.body.appendChild(bNum1);
 
+bNum1.addEventListener('click', () => {
+    inputBar.value += "1"  
+});
+
 //number 2
 const bNum2 = document.createElement("button")
 bNum2.innerText = "2";
 document.body.appendChild(bNum2);
+
+bNum2.addEventListener('click', () => {
+    inputBar.value += "2"  
+    console.log(inputBar.innerText)
+});
 
 //-- number 3
 const bNum3 = document.createElement("button")
@@ -64,6 +81,12 @@ const subtraction = document.createElement("button")
 subtraction.innerText = "-";
 document.body.appendChild(subtraction);
 
+
+subtraction.addEventListener('click', () => {
+    inputBar.value += "-"  
+});
+
+
 //-- opertaion +
 const addition = document.createElement("button")
 addition.innerText = "+";
@@ -84,11 +107,18 @@ const total = document.createElement("button")
 total.innerText = "=";
 document.body.appendChild(total);
 
+
+total.addEventListener('click', () => {
+    inputBar.value = eval(inputBar.value)   
+});
+
 //--  Clear
 const clearNumber = document.createElement("button")
 clearNumber.innerText = "C";
 document.body.appendChild(clearNumber);
 
-
-
+//-- decimal button
+const decimal = document.createElement("button");
+decimal.innerText = ".";
+document.body.appendChild(decimal);
 
