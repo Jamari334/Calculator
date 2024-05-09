@@ -41,40 +41,80 @@ const bNum3 = document.createElement("button")
 bNum3.innerText = "3";
 document.body.appendChild(bNum3);
 
+bNum3.addEventListener('click', () => {
+    inputBar.value += "3"  
+    console.log(inputBar.innerText)
+});
+
 //-- number 4
 const bNum4 = document.createElement("button")
 bNum4.innerText = "4";
 document.body.appendChild(bNum4);
+
+bNum4.addEventListener('click', () => {
+    inputBar.value += "4"  
+    console.log(inputBar.innerText)
+});
 
 //-- number 5
 const bNum5 = document.createElement("button")
 bNum5.innerText = "5";
 document.body.appendChild(bNum5);
 
+bNum5.addEventListener('click', () => {
+    inputBar.value += "5"  
+    console.log(inputBar.innerText)
+});
+
 //-- number 6
 const bNum6 = document.createElement("button")
 bNum6.innerText = "6";
 document.body.appendChild(bNum6);
+
+bNum6.addEventListener('click', () => {
+    inputBar.value += "6"  
+    console.log(inputBar.innerText)
+});
 
 //-- number 7
 const bNum7 = document.createElement("button")
 bNum7.innerText = "7";
 document.body.appendChild(bNum7);
 
+bNum7.addEventListener('click', () => {
+    inputBar.value += "7"  
+    console.log(inputBar.innerText)
+});
+
 //-- number 8
 const bNum8 = document.createElement("button")
 bNum8.innerText = "8";
 document.body.appendChild(bNum8);
+
+bNum8.addEventListener('click', () => {
+    inputBar.value += "8"  
+    console.log(inputBar.innerText)
+});
 
 //-- number 9
 const bNum9 = document.createElement("button")
 bNum9.innerText = "9";
 document.body.appendChild(bNum9);
 
+bNum9.addEventListener('click', () => {
+    inputBar.value += "9"  
+    console.log(inputBar.innerText)
+});
+
 //-- number 0
 const bNum0 = document.createElement("button")
 bNum0.innerText = "0";
 document.body.appendChild(bNum0);
+
+bNum0.addEventListener('click', () => {
+    inputBar.value += "0"  
+    console.log(inputBar.innerText)
+});
 
 //-- opertaion -
 const subtraction = document.createElement("button")
@@ -92,15 +132,27 @@ const addition = document.createElement("button")
 addition.innerText = "+";
 document.body.appendChild(addition);
 
+addition.addEventListener('click', () => {
+    inputBar.value += "+"  
+});
+
 //-- operation x
 const multiplication = document.createElement("button")
 multiplication.innerText = "x";
 document.body.appendChild(multiplication);
 
+multiplication.addEventListener('click', () => {
+    inputBar.value += "*"  
+});
+
 //-- operation %
 const divison = document.createElement("button")
-divison.innerText = "%";
+divison.innerText = "÷";
 document.body.appendChild(divison);
+
+divison.addEventListener('click', () => {
+    inputBar.value += "/"  
+});
 
 //-- equal sign 
 const total = document.createElement("button")
@@ -117,8 +169,16 @@ const clearNumber = document.createElement("button")
 clearNumber.innerText = "C";
 document.body.appendChild(clearNumber);
 
+clearNumber.addEventListener('click', () => {
+    inputBar.value = " "; 
+});
+
 //-- decimal button
 const decimal = document.createElement("button");
 decimal.innerText = ".";
 document.body.appendChild(decimal);
+
+decimal.addEventListener('click', () => {
+    inputBar.value += "."  
+});
 
