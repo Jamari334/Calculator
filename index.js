@@ -1,3 +1,7 @@
+let firstVal = "";
+let operator = "";
+let secondVal = "";
+
 // --------------------HEADER-----------------/
 
 const header = document.createElement('h1');
@@ -12,6 +16,29 @@ const inputBar = document.createElement('input');
 inputBar.placeholder = "0";
 document.body.appendChild(inputBar);
 
+//------ Create Function for first input
+//  first input is the number that is number pressed into the input bar when an arithmetic operation is pressed
+
+const inputVal = (val) => {
+    if (val === "+" || val === "-" || val === "*" || val === "/") {
+        if (firstVal === "") {
+            return
+        }
+        firstVal = inputBar.value
+        operator = val
+        return
+    }
+
+    if (operator === "") {
+        firstVal += val
+        inputBar.value = firstVal
+        return
+    }
+
+    secondVal += val
+    inputBar.value = secondVal
+}
+
 
 
 //------------------CREATING BUTTONS --------------------------//
@@ -23,7 +50,7 @@ bNum1.innerText = "1";
 document.body.appendChild(bNum1);
 
 bNum1.addEventListener('click', () => {
-    inputBar.value += "1"  
+    inputVal("1")
 });
 
 //number 2
@@ -32,8 +59,8 @@ bNum2.innerText = "2";
 document.body.appendChild(bNum2);
 
 bNum2.addEventListener('click', () => {
-    inputBar.value += "2"  
-    console.log(inputBar.innerText)
+    inputVal("2")
+
 });
 
 //-- number 3
@@ -42,8 +69,8 @@ bNum3.innerText = "3";
 document.body.appendChild(bNum3);
 
 bNum3.addEventListener('click', () => {
-    inputBar.value += "3"  
-    console.log(inputBar.innerText)
+    inputVal("3")
+
 });
 
 //-- number 4
@@ -52,8 +79,8 @@ bNum4.innerText = "4";
 document.body.appendChild(bNum4);
 
 bNum4.addEventListener('click', () => {
-    inputBar.value += "4"  
-    console.log(inputBar.innerText)
+    inputVal("4")
+
 });
 
 //-- number 5
@@ -62,8 +89,8 @@ bNum5.innerText = "5";
 document.body.appendChild(bNum5);
 
 bNum5.addEventListener('click', () => {
-    inputBar.value += "5"  
-    console.log(inputBar.innerText)
+    inputVal( "5")
+
 });
 
 //-- number 6
@@ -72,8 +99,8 @@ bNum6.innerText = "6";
 document.body.appendChild(bNum6);
 
 bNum6.addEventListener('click', () => {
-    inputBar.value += "6"  
-    console.log(inputBar.innerText)
+    inputVal( "6")
+   
 });
 
 //-- number 7
@@ -82,8 +109,8 @@ bNum7.innerText = "7";
 document.body.appendChild(bNum7);
 
 bNum7.addEventListener('click', () => {
-    inputBar.value += "7"  
-    console.log(inputBar.innerText)
+    inputVal("7")
+
 });
 
 //-- number 8
@@ -92,8 +119,8 @@ bNum8.innerText = "8";
 document.body.appendChild(bNum8);
 
 bNum8.addEventListener('click', () => {
-    inputBar.value += "8"  
-    console.log(inputBar.innerText)
+    inputVal("8")
+
 });
 
 //-- number 9
@@ -102,8 +129,8 @@ bNum9.innerText = "9";
 document.body.appendChild(bNum9);
 
 bNum9.addEventListener('click', () => {
-    inputBar.value += "9"  
-    console.log(inputBar.innerText)
+    inputVal("9")
+
 });
 
 //-- number 0
@@ -112,46 +139,47 @@ bNum0.innerText = "0";
 document.body.appendChild(bNum0);
 
 bNum0.addEventListener('click', () => {
-    inputBar.value += "0"  
-    console.log(inputBar.innerText)
+    inputVal("0")
+
 });
 
-//-- opertaion -
+//-- opertaion subtract
 const subtraction = document.createElement("button")
 subtraction.innerText = "-";
 document.body.appendChild(subtraction);
 
 
 subtraction.addEventListener('click', () => {
-    inputBar.value += "-"  
+    inputVal("-")
+     
 });
 
 
-//-- opertaion +
+//-- opertaion add
 const addition = document.createElement("button")
 addition.innerText = "+";
 document.body.appendChild(addition);
 
 addition.addEventListener('click', () => {
-    inputBar.value += "+"  
+    inputVal("+")
 });
 
-//-- operation x
+//-- operation multiple
 const multiplication = document.createElement("button")
 multiplication.innerText = "x";
 document.body.appendChild(multiplication);
 
 multiplication.addEventListener('click', () => {
-    inputBar.value += "*"  
+    inputVal("*")
 });
 
-//-- operation %
+//-- operation divide
 const divison = document.createElement("button")
 divison.innerText = "÷";
 document.body.appendChild(divison);
 
 divison.addEventListener('click', () => {
-    inputBar.value += "/"  
+    inputVal("/")
 });
 
 //-- equal sign 
@@ -161,7 +189,14 @@ document.body.appendChild(total);
 
 
 total.addEventListener('click', () => {
-    inputBar.value = eval(inputBar.value)   
+    if(!firstVal && !secondVal ){
+        return 
+    }
+   const total = eval(firstVal + operator + secondVal)
+   inputBar.value = total
+   firstVal = "";
+   secondVal = "";
+   operator = "";
 });
 
 //--  Clear
@@ -170,7 +205,7 @@ clearNumber.innerText = "C";
 document.body.appendChild(clearNumber);
 
 clearNumber.addEventListener('click', () => {
-    inputBar.value = " "; 
+    inputBar.value = " ";
 });
 
 //-- decimal button
@@ -179,6 +214,7 @@ decimal.innerText = ".";
 document.body.appendChild(decimal);
 
 decimal.addEventListener('click', () => {
-    inputBar.value += "."  
+    inputBar.value += "."
 });
 
+//----- saves number as input one when any operation sign has been pressed
