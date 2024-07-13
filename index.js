@@ -56,7 +56,7 @@ bNum1.addEventListener('click', () => {
 //number 2
 const bNum2 = document.createElement("button")
 bNum2.innerText = "2";
-documeent.body.appndChild(bNum2);
+document.body.appendChild(bNum2);
 
 bNum2.addEventListener('click', () => {
     inputVal("2")
